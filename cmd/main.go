@@ -12,5 +12,5 @@ func main() {
 		fmt.Println("Please give a peer ID as an argument")
 		return
 	}
-	ipfs.Run(os.Args[1])
+	ipfs.Run(os.Args[1], ".ipfs")
 }

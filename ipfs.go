@@ -14,15 +14,15 @@ import (
 	"golang.org/x/net/context"
 )
 
-func Run(id string) {
+func Run(targetId string, localRepo string) {
 	logging.LevelInfo()
-	target, err := peer.IDB58Decode(id)
+	target, err := peer.IDB58Decode(targetId)
 	if err != nil {
 		panic(err)
 	}
 
 	// Basic ipfsnode setup
-	r, err := fsrepo.Open("../.ipfs-repo-client")
+	r, err := fsrepo.Open(localRepo)
 	if err != nil {
 		panic(err)
 	}
